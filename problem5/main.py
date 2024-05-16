@@ -1,5 +1,11 @@
 def pair_sum(arr, target):
-    return []
+    num_dict = {}
+    for i, num in enumerate(arr):
+        complement = target - num
+        if complement in num_dict:
+            return [num_dict[complement], i]
+        num_dict[num] = i
+    return None
 
 if __name__ == '__main__':
     print(pair_sum([1, 2, 3, 4, 6], 6)) # [1, 3]
