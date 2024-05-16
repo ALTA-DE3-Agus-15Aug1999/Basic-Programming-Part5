@@ -1,5 +1,16 @@
 def muncul_sekali(angka):
-    return []
+    char_count = {}
+    for char in angka:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    result = []
+    for char, count in char_count.items():
+        if count == 1:
+            result.append(int(char))
+
+    return result
 
 if __name__ == '__main__':
     print(muncul_sekali("1234123")) # [4]
